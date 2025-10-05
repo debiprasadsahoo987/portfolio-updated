@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Model(props) {
+export function ModelSphere(props) {
   const { nodes, materials } = useGLTF("/models/beautiful_sphere.glb");
   return (
     <group {...props} dispose={null}>

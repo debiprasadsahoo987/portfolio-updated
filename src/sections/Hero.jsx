@@ -3,6 +3,7 @@ import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer, Sphere } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import { ModelSphere } from "../components/ModelSphere";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -28,9 +29,9 @@ const Hero = () => {
           camera={{ position: [0, 0, -10], fov: 17.5, near: 1, far: 20 }}
         >
           <ambientLight intensity={0.5} />
+          <directionalLight intensity={0.8} />
           <Float speed={0.5}>
             <Planet scale={isMobile ? 0.6 : 0.9} />
-            {/* <Sphere /> */}
           </Float>
           <Environment resolution={256}>
             <group rotation={[-Math.PI / 3, 4, 1]}>
@@ -61,6 +62,11 @@ const Hero = () => {
             </group>
           </Environment>
         </Canvas>
+        {/* <Canvas camera={{ position: [0, 0, -10], fov: 50, near: 0.1, far: 20 }}>
+          <ambientLight intensity={0.8} />
+          <directionalLight position={[10, 8, 10]} intensity={900} />
+          <ModelSphere scale={0.015} rotation={[0, 0, 0]} />
+        </Canvas> */}
       </figure>
     </section>
   );
