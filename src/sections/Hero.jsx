@@ -8,7 +8,7 @@ import { ModelSphere } from "../components/ModelSphere";
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
   const text = `Results-driven Software Engineer
-       with 3+ years of
+    with 3+ years of
     delivering enterprise-grade backend and
     full-stack solutions`;
 
